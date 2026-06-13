@@ -1,0 +1,122 @@
+:root {
+    --verde-oscuro: #0A401B;
+    --verde-medio: #2E7D32;
+    --verde-claro: #4CAF50;
+    --fondo: #EAF6EC;
+    --blanco: #FFFFFF;
+    --texto-oscuro: #212121;
+    --texto-gris: #616161;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--texto-oscuro);
+    background-color: var(--fondo);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--verde-oscuro);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    width: 150px;
+    height: auto;
+}
+
+/* Navegación */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: var(--blanco);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.main-nav a:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+}
+
+/* Footer */
+footer {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+    color: var(--blanco);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    max-width: 200px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.footer-contacto address {
+    font-style: normal;
+    color: var(--blanco);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.footer-copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
