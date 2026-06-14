@@ -1,0 +1,171 @@
+    {
+        "centros_reciclaje": [
+            {
+                "id": 1,
+                "nombre": "Centro de Acopio Preserve Planet",
+                "descripcion": "Centro de acopio y gestión de residuos valorizables.",
+                "ubicacion_completa": "San Juan de Dios, San José, Costa Rica",
+                "latitud": 9.85,
+                "longitud": -84.08,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Cartón",
+                    "Plástico",
+                    "Vidrio"
+                ],
+                "horario": "Lunes a Jueves 08:30-18:00, Viernes 07:00-18:00",
+                "numero_telefono": "+506 8883-3367",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 2,
+                "nombre": "Centro de Acopio La Sylvia",
+                "descripcion": "Centro de reciclaje y recuperación de materiales.",
+                "ubicacion_completa": "Barva, Heredia, Costa Rica",
+                "latitud": 10.08,
+                "longitud": -84.12,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Cartón",
+                    "Plástico",
+                    "Aluminio"
+                ],
+                "horario": "Lunes a Viernes 07:30-16:30, Sábado 07:00-13:00",
+                "numero_telefono": "+506 2560-2171",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 3,
+                "nombre": "Centro de Acopio y Reciclaje ADIFORT",
+                "descripcion": "Centro comunitario de reciclaje en La Fortuna.",
+                "ubicacion_completa": "La Fortuna, Alajuela, Costa Rica",
+                "latitud": 10.47,
+                "longitud": -84.65,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Plástico",
+                    "Vidrio"
+                ],
+                "horario": "Lunes a Viernes 07:00-16:00, Sábado 07:00-12:00",
+                "numero_telefono": "+506 2479-0031",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 4,
+                "nombre": "Centro de Acopio Calle 12",
+                "descripcion": "Centro urbano de recepción de materiales reciclables.",
+                "ubicacion_completa": "Paso de la Vaca, San José, Costa Rica",
+                "latitud": 9.94,
+                "longitud": -84.08,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Cartón",
+                    "Plástico"
+                ],
+                "horario": "Lunes a Sábado 08:00-19:00",
+                "numero_telefono": "+506 6007-6651",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 5,
+                "nombre": "Recicladora De Cobre #1 Los Nuñez",
+                "descripcion": "Especializada en metales y materiales reciclables.",
+                "ubicacion_completa": "Invu Las Cañas, Alajuela, Costa Rica",
+                "latitud": 10.02,
+                "longitud": -84.21,
+                "materiales_aceptados": [
+                    "Cobre",
+                    "Aluminio",
+                    "Metales"
+                ],
+                "horario": "Lunes a Sábado 08:00-17:45",
+                "numero_telefono": "+506 7081-5086",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 6,
+                "nombre": "Recicladora San Miguel",
+                "descripcion": "Centro de reciclaje y recuperación de residuos.",
+                "ubicacion_completa": "Alajuelita, San José, Costa Rica",
+                "latitud": 9.90,
+                "longitud": -84.10,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Cartón",
+                    "Plástico",
+                    "Metales"
+                ],
+                "horario": "Lunes a Viernes 07:30-17:30, Sábado 07:30-16:00",
+                "numero_telefono": "+506 2275-1833",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 7,
+                "nombre": "Centro de Acopio y Reciclaje",
+                "descripcion": "Centro local de reciclaje comunitario.",
+                "ubicacion_completa": "San Rafael, Heredia, Costa Rica",
+                "latitud": 10.05,
+                "longitud": -84.10,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Vidrio",
+                    "Plástico"
+                ],
+                "horario": "Lunes a Viernes 06:00-12:00",
+                "numero_telefono": "+506 2560-6231",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 8,
+                "nombre": "Centro de Acopio El Valle",
+                "descripcion": "Centro de recepción y clasificación de residuos.",
+                "ubicacion_completa": "Turrialba, Cartago, Costa Rica",
+                "latitud": 9.90,
+                "longitud": -83.68,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Cartón",
+                    "Plástico",
+                    "Vidrio"
+                ],
+                "horario": "Lunes a Sábado 07:00-17:00",
+                "numero_telefono": "+506 2557-3939",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 9,
+                "nombre": "Centro de Reciclaje Municipalidad de San José",
+                "descripcion": "Centro municipal para recepción de residuos valorizables.",
+                "ubicacion_completa": "Hatillo 2, San José, Costa Rica",
+                "latitud": 9.91,
+                "longitud": -84.10,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Cartón",
+                    "Plástico",
+                    "Vidrio",
+                    "Aluminio"
+                ],
+                "horario": "Todos los días 06:00-18:00",
+                "numero_telefono": "+506 2214-9742",
+                "imagen": "assets/images/EcoMapHero.png"
+            },
+            {
+                "id": 10,
+                "nombre": "Centro de Acopio Valle Ecológico",
+                "descripcion": "Centro ecológico para reciclaje comunitario.",
+                "ubicacion_completa": "Palmares, Alajuela, Costa Rica",
+                "latitud": 10.05,
+                "longitud": -84.44,
+                "materiales_aceptados": [
+                    "Papel",
+                    "Cartón",
+                    "Vidrio",
+                    "Plástico"
+                ],
+                "horario": "Lunes a Viernes 07:30-15:30, Sábado 07:30-12:30",
+                "numero_telefono": "+506 6306-9545",
+                "imagen": "assets/images/EcoMapHero.png"
+            }
+        ]
+    }

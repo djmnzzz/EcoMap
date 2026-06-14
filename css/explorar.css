@@ -1,0 +1,189 @@
+/*Hero*/
+
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.hero h3 {
+    color: #16a34a;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: 0 auto;
+
+    font-size: 1.15rem;
+    line-height: 1.8;
+
+    color: #6b7280;
+}
+
+/* CONTENEDOR */
+
+#centros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* CARTA */
+
+.carta {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    transition: .3s ease;
+}
+
+.carta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+.carta-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* IMAGEN */
+
+.carta img {
+    width: 50%;
+    height: 220px;
+    margin: 0 auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* INFO */
+
+.carta-info {
+    padding: 1.2rem;
+}
+
+.carta-info h3 {
+    font-size: 1.3rem;
+    color: #1f2937;
+    margin-bottom: .5rem;
+}
+
+.carta-ubicacion {
+    color: #6b7280;
+    font-size: .9rem;
+}
+
+/* EXTRA */
+
+.carta-extra {
+    padding: 0 1.2rem 1.2rem;
+}
+
+.carta-extra p {
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* MATERIALES */
+
+.materiales {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 1rem 0;
+}
+
+.materiales span {
+    background: #d1fae5;
+    color: #065f46;
+    padding: .4rem .8rem;
+    border-radius: 30px;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+/* EXTRA INFO */
+
+.carta-extra-info {
+    margin-top: 1rem;
+}
+
+/* INFO CENTRO */
+
+.info-centro {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.info-centro p {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .9rem;
+    color: #374151;
+}
+
+.info-centro i {
+    color: #10b981;
+}
+
+/* BOTÓN MAPA*/
+
+.botton-mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+
+    width: 100%;
+
+    padding: .9rem;
+    border-radius: 12px;
+
+    background: #10b981;
+    color: white;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.botton-mapa:hover {
+    background: #059669;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    #centros {
+        padding: 1rem;
+        gap: 1.2rem;
+    }
+
+    .carta img {
+        height: 180px;
+    }
+
+    .carta-info h3 {
+        font-size: 1.1rem;
+    }
+
+}
