@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muestra un formulario para que el usuario registre sus hábitos de reciclaje.">
+    <meta name="keywords" content="reciclaje, Costa Rica, EcoMap, centros de acopio, materiales, datos, hábitos">
+    <meta name="author" content="Jesús González, Daniela Aguilar">
+    <title>EcoMap</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/EcoMapPersonaje.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bitacora.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/images/EcoMapLogo2.png" alt="Logo de EcoMap." width="150" height="100">
+        </a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="explorar.html">Explorar centros</a></li>
+                <li><a href="index.html #como-funciona">¿Cómo funciona?</a></li>
+                <li><a href="index.html #sobre-nosotros">Sobre nosotros</a></li>
+                <li><a href="bitacora.html">Bitácora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <figure>
+                <img src="assets/images/EcoMapBitacora.png" alt="Contenedor de reciclaje con una tabla de tareas."
+                    width="200">
+            </figure>
+            <h1>Mi Bitácora de Reciclaje</h1>
+            <p>Registra cada vez que reciclas y lleva el control de tu impacto en el planeta.</p>
+        </section>
+
+        <div class="bitacora-top">
+            <form class="bitacora-form">
+                <h2>Registrar nueva acción</h2>
+
+                <label for="selectMaterial">Material</label>
+                <select id="selectMaterial" required>
+                    <option value="">Seleccione un material</option>
+                </select>
+
+                <label for="cantidadMaterial">Cantidad de materiales</label>
+                <input type="number" id="cantidadMaterial" placeholder="Ejemplo: 5" min="0.1" step="0.1" required>
+
+                <label for="selectCentro">Centro de acopio</label>
+                <select id="selectCentro" required>
+                    <option value="">Seleccione un centro de acopio</option>
+                </select>
+
+                <label for="fechaAccion">Fecha</label>
+                <input type="date" id="fechaAccion" required>
+
+                <p>*Campos obligatorios</p>
+
+                <button type="submit" id="btnRegistrar">
+                    Registrar la acción
+                </button>
+            </form>
+
+            <div class="bitacora-resumen">
+                <h2>Resumen de tus acciones</h2>
+                <div class="resumen-grid">
+                    <div class="resumen-item">
+                        <img src="assets/images/IconoCentro.png" width="40">
+                        <span><strong>numero</strong></span>
+                        <p>Total acumulado</p>
+                    </div>
+
+                    <div class="resumen-item">
+                        <img src="assets/images/IconoCentro.png" width="40">
+                        <span><strong>numero</strong></span>
+                        <p>Veces que ha reciclado</p>
+                    </div>
+
+                    <div class="resumen-item">
+                        <img src="assets/images/IconoCentro.png" width="40">
+                        <span><strong>numero</strong></span>
+                        <p>Material más reciclado</p>
+                    </div>
+
+                    <div class="resumen-item">
+                        <img src="assets/images/IconoCentro.png" width="40">
+                        <span><strong>numero</strong></span>
+                        <p>Cantidad de ese material</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Desglose por material</h2>
+            <div class="desglose-lista" id="desgloseLista">
+
+            </div>
+        </section>
+
+        <div>
+            <div class="bitacora-header">
+                <h2>Tu bitácora</h2>
+                <button id="btnVaciar" class="btn-vaciar">
+                    Vaciar bitácora
+                </button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Material</th>
+                        <th>Cantidad</th>
+                        <th>Centro de acopio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="bitacoraBody">
+
+                </tbody>
+            </table>
+        </div>
+
+        <p>¡Gracias por ser parte del cambio!</p>
+    </main>
+    <footer>
+        <div class="footer-logo">
+            <img src="assets/images/EcoMapLogo2.png" alt="Logo de EcoMap." width="150" height="100">
+            <p>Conectamos personas con centros de reciclaje para un mundo mejor.</p>
+        </div>
+
+        <div class="footer-nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="explorar.html">Explorar centros</a></li>
+                    <li><a href="index.html #como-funciona">¿Cómo funciona?</a></li>
+                    <li><a href="index.html #sobre-nosotros">Sobre nosotros</a></li>
+                    <li><a href="bitacora.html">Bitácora</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="footer-contacto">
+            <address>
+                <strong>Contacto</strong><br>
+                EcoMap<br>
+                ecomap@gmail.com
+            </address>
+        </div>
+
+        <p class="footer-copyright">© 2026 EcoMap — Todos los derechos reservados. — Jesús González & Daniela
+            Aguilar.
+        </p>
+    </footer>
+
+    <script src="js/bitacora.js"></script>
+</body>
+
+</html>

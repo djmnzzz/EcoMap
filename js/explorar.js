@@ -56,8 +56,8 @@ function mostrarCentros(lista) {
 
                 <div class="materiales">
                     ${centro.materiales_aceptados
-                        .map(material => `<span>${material}</span>`)
-                        .join("")}
+                .map(material => `<span>${material}</span>`)
+                .join("")}
                 </div>
 
                 <div class="carta-extra-info">
@@ -74,14 +74,10 @@ function mostrarCentros(lista) {
                         </p>
                     </div>
 
-                    <a href="https://www.google.com/maps?q=${centro.latitud},${centro.longitud}"
-                       target="_blank"
-                       class="botton-mapa">
-
-                        <i class="fa-solid fa-location-dot"></i>
+                <a href="https://www.google.com/maps?q=${centro.latitud},${centro.longitud}" target="_blank" class="botton-mapa">
+                    <i class="fa-solid fa-location-dot"></i>
                         Ver ubicación
-
-                    </a>
+                </a>
 
                 </div>
 
