@@ -89,3 +89,30 @@ function mostrarCentros(lista) {
 }
 
 cargarCentros();
+
+//PARA FILTRAR POR CATEGORIA
+function filtrar(materiales_aceptados) {
+
+    materialesActuales = materiales_aceptados;
+    actualizarCentros();
+
+}   
+
+//ACTUALIZA EL CATALOGO EN TODAS LAS COMBINACIONES
+function actualizarCentros() {
+
+    let resultado = [...ListaCentros];
+
+    // FILTRO DE MATERIALES
+
+    if (materialesActuales !== "Todos") {
+
+        resultado = resultado.filter(
+            centro => centro.materiales_aceptados.includes(materialesActuales)
+        );
+    }
+    
+    listaActual = resultado;
+
+    mostrarCentros(listaActual);
+}

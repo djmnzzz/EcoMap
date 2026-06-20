@@ -65,7 +65,200 @@
 .hero-botones a:hover {
     opacity: 0.85;
 }
+/* =========================
+   CENTROS DESTACADOS
+========================= */
 
+.centros-destacados {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+    background: var(--blanco);
+}
+
+/* Efecto de difuminado lateral */
+.centros-destacados::before,
+.centros-destacados::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+    border-radius:  0 0  0 20px;
+}
+
+
+.centros-destacados::before {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        #f4fff4,
+        transparent
+    );
+}
+
+.centros-destacados::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        #f4fff4,
+        transparent
+    );
+}
+
+/* Contenedor principal */
+
+#centros {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    padding: 1rem;
+    animation: scroll 30s linear infinite;
+}
+
+#centros:hover {
+    animation-play-state: paused;
+}
+
+/* Tarjetas */
+
+.carta {
+    width: 320px;
+    min-height: 550px; /* todas iguales */
+
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.carta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* Imagen */
+
+.carta img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+.carta:hover img {
+    transform: scale(1.08);
+}
+
+/* Enlace */
+
+.carta-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Información */
+
+.carta-info {
+    padding: 1.2rem;
+}
+
+.carta-info h3 {
+    color: #1b5e20;
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+}
+
+.carta-ubicacion {
+    color: #666;
+    line-height: 1.5;
+    font-size: .95rem;
+}
+
+/* Materiales */
+
+.materiales {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding: 0 1.2rem 1rem;
+}
+
+.materiales span {
+    background: #e8f5e9;
+    color: #2e7d32;
+
+    padding: .4rem .8rem;
+
+    border-radius: 999px;
+
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+/* Botón */
+
+.botton-mapa {
+    margin-top: auto;
+
+    display: block;
+
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-bottom: 18px;
+
+    text-align: center;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.botton-mapa:hover {
+    transform: scale(1.03);
+}
+
+/* Animación infinita */
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .carta {
+        width: 280px;
+    }
+
+    .carta img {
+        height: 180px;
+    }
+
+    #centros {
+        gap: 1rem;
+    }
+}
 /* Estadísticas */
 .estadisticas {
     background-color: var(--fondo);

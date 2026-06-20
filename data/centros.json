@@ -15,7 +15,8 @@
                 ],
                 "horario": "Lunes a Jueves 08:30-18:00, Viernes 07:00-18:00",
                 "numero_telefono": "+506 8883-3367",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": true
             },
             {
                 "id": 2,
@@ -32,7 +33,9 @@
                 ],
                 "horario": "Lunes a Viernes 07:30-16:30, Sábado 07:00-13:00",
                 "numero_telefono": "+506 2560-2171",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": true
+
             },
             {
                 "id": 3,
@@ -48,7 +51,9 @@
                 ],
                 "horario": "Lunes a Viernes 07:00-16:00, Sábado 07:00-12:00",
                 "numero_telefono": "+506 2479-0031",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": true
+
             },
             {
                 "id": 4,
@@ -64,7 +69,8 @@
                 ],
                 "horario": "Lunes a Sábado 08:00-19:00",
                 "numero_telefono": "+506 6007-6651",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": false
             },
             {
                 "id": 5,
@@ -80,7 +86,8 @@
                 ],
                 "horario": "Lunes a Sábado 08:00-17:45",
                 "numero_telefono": "+506 7081-5086",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",   
+                "destacado": false
             },
             {
                 "id": 6,
@@ -97,7 +104,8 @@
                 ],
                 "horario": "Lunes a Viernes 07:30-17:30, Sábado 07:30-16:00",
                 "numero_telefono": "+506 2275-1833",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": false
             },
             {
                 "id": 7,
@@ -113,7 +121,8 @@
                 ],
                 "horario": "Lunes a Viernes 06:00-12:00",
                 "numero_telefono": "+506 2560-6231",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": false
             },
             {
                 "id": 8,
@@ -130,7 +139,8 @@
                 ],
                 "horario": "Lunes a Sábado 07:00-17:00",
                 "numero_telefono": "+506 2557-3939",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": true
             },
             {
                 "id": 9,
@@ -148,7 +158,8 @@
                 ],
                 "horario": "Todos los días 06:00-18:00",
                 "numero_telefono": "+506 2214-9742",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": true
             },
             {
                 "id": 10,
@@ -165,7 +176,8 @@
                 ],
                 "horario": "Lunes a Viernes 07:30-15:30, Sábado 07:30-12:30",
                 "numero_telefono": "+506 6306-9545",
-                "imagen": "assets/images/EcoMapHero.png"
+                "imagen": "assets/images/EcoMapHero.png",
+                "destacado": true
             }
         ]
     }
