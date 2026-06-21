@@ -1,0 +1,5 @@
+.main-nav ul li.active a {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+
+}

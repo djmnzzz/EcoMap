@@ -1,3 +1,8 @@
+.main-nav ul li.active a {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+
+}
 /*Hero*/
 
 .hero {
@@ -111,7 +116,7 @@
     display: flex;
     flex-direction: column;
 
-    height: 600px;
+    height: 650px;
 
     box-shadow: 0 10px 25px rgba(0,0,0,.1);
     transition: .3s ease;
@@ -123,6 +128,9 @@
 }
 
 .carta-link {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     text-decoration: none;
     color: inherit;
 }
@@ -191,8 +199,10 @@
 /* EXTRA INFO */
 
 .carta-extra-info {
-    margin-top: auto;
-    }
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 
 /* INFO CENTRO */
 
@@ -225,8 +235,6 @@
 
     width: 100%;
 
-    
-    margin-top: auto;
     padding: .9rem;
     border-radius: 12px;
 
@@ -237,6 +245,9 @@
     font-weight: 600;
 
     transition: .3s;
+
+        margin-top: auto;
+
 }
 
 .botton-mapa:hover {
