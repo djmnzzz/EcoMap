@@ -49,7 +49,7 @@
                     <option value="">Seleccione un material</option>
                 </select>
 
-                <label for="cantidadMaterial">Cantidad de materiales</label>
+                <label for="cantidadMaterial">Cantidad de materiales (por kilo):</label>
                 <input type="number" id="cantidadMaterial" placeholder="Ejemplo: 5" min="0.1" step="0.1" required>
 
                 <label for="selectCentro">Centro de acopio</label>
@@ -70,25 +70,25 @@
             <div class="bitacora-resumen">
                 <h2>Resumen de tus acciones</h2>
                 <div class="resumen-grid">
-                    <div class="resumen-item">
+                    <div class="resumen-item" id="totalAcumulado">
                         <img src="assets/images/IconoCentro.png" width="40">
                         <span><strong>numero</strong></span>
                         <p>Total acumulado</p>
                     </div>
 
-                    <div class="resumen-item">
+                    <div class="resumen-item" id="vecesReciclado">
                         <img src="assets/images/IconoCentro.png" width="40">
                         <span><strong>numero</strong></span>
                         <p>Veces que ha reciclado</p>
                     </div>
 
-                    <div class="resumen-item">
+                    <div class="resumen-item" id="materialMasReciclado">
                         <img src="assets/images/IconoCentro.png" width="40">
                         <span><strong>numero</strong></span>
                         <p>Material más reciclado</p>
                     </div>
 
-                    <div class="resumen-item">
+                    <div class="resumen-item" id="cantidadMaterialTop">
                         <img src="assets/images/IconoCentro.png" width="40">
                         <span><strong>numero</strong></span>
                         <p>Cantidad de ese material</p>
@@ -97,14 +97,12 @@
             </div>
         </div>
 
-        <section>
-            <h2>Desglose por material</h2>
-            <div class="desglose-lista" id="desgloseLista">
+<section class="desglose-section">
+    <h2>Desglose por material</h2>
+    <div class="desglose-lista" id="desgloseLista"></div>
+</section>
 
-            </div>
-        </section>
-
-        <div>
+        <div class="bitacora-lista">
             <div class="bitacora-header">
                 <h2>Tu bitácora</h2>
                 <button id="btnVaciar" class="btn-vaciar">
