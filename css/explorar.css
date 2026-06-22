@@ -255,20 +255,58 @@
 }
 
 /* RESPONSIVE */
-
+/*  Tablet (768px) */
 @media (max-width: 768px) {
 
-    #centros {
-        padding: 1rem;
-        gap: 1.2rem;
+    /* Hero más compacto */
+    .hero {
+        padding: 3rem 1.5rem;
     }
 
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Tarjetas en 2 columnas */
+    #centros {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+}
+
+/* Celular (480px)  */
+@media (max-width: 480px) {
+
+    /* Hero más pequeño */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Tarjetas en 1 columna */
+    #centros {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    /* Imagen de la carta más grande en celular */
     .carta img {
+        width: 80%;
         height: 180px;
     }
 
-    .carta-info h3 {
-        font-size: 1.1rem;
+    /* Botón del mapa más compacto */
+    .botton-mapa {
+        padding: 0.7rem;
+        font-size: 0.9rem;
     }
-
 }

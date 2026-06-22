@@ -262,3 +262,87 @@ main > p:last-child {
     padding: 2rem;
     font-size: 1.1rem;
 }
+
+/* RESPONSIVE */
+/*  Tablet (768px)  */
+@media (max-width: 768px) {
+
+    /* Las dos columnas se apilan verticalmente */
+    .bitacora-top {
+        flex-direction: column;
+    }
+
+    /* El formulario ocupa todo el ancho */
+    .bitacora-form {
+        width: 100%;
+    }
+
+    /* El resumen ocupa todo el ancho */
+    .bitacora-resumen {
+        width: 100%;
+    }
+
+    /* La tabla se hace scrolleable horizontalmente */
+    .bitacora-lista {
+        overflow-x: auto;
+    }
+
+    /* Desglose con menos padding */
+    .desglose-section {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+/* Celular (480px)  */
+@media (max-width: 480px) {
+
+    /* Encabezado más compacto */
+    main > section:first-child {
+        padding: 2rem 1rem 1rem;
+    }
+
+    main > section:first-child h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Las tarjetas del resumen en 1 columna */
+    .resumen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Padding reducido en el formulario */
+    .bitacora-form {
+        padding: 1.2rem;
+    }
+
+    /* Header de la bitácora apilado */
+    .bitacora-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    /* Tabla con texto más pequeño */
+    th, td {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    /* Desglose */
+    .desglose-nombre {
+        width: 70px;
+        font-size: 0.8rem;
+    }
+
+    .desglose-valor {
+        width: 60px;
+        font-size: 0.75rem;
+    }
+
+    /* Bitácora con menos margen */
+    .bitacora-lista {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+}

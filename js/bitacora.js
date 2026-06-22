@@ -248,3 +248,9 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarCentrosParaSelect();
     cargarBitacoraDeStorage();
 });
+
+// Menú hamburguesa
+document.getElementById("btnHamburguesa").addEventListener("click", function () {
+    const nav = document.querySelector(".main-nav");
+    nav.classList.toggle("abierto");
+});

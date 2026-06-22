@@ -422,3 +422,101 @@
     color: var(--texto-gris);
     line-height: 1.6;
 }
+
+/*  Tablet (768px)  */
+@media (max-width: 768px) {
+
+    /* Hero apilado verticalmente */
+    .hero {
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .hero-image {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+
+    /* Estadísticas en 2 columnas */
+    .estadisticas-grid {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .estadistica-item {
+        min-width: 40%;
+    }
+
+    /* Tarjetas de cómo funciona en 2 columnas */
+    .funciones-grid {
+        gap: 1rem;
+    }
+
+    /* Mensaje apilado */
+    .mensaje {
+        flex-direction: column;
+        margin: 2rem 1rem;
+        text-align: center;
+    }
+
+    .mensaje-texto {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .mensaje-imagen {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+}
+
+/*  Celular (480px)  */
+@media (max-width: 480px) {
+
+    /* Hero más compacto */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-image {
+        max-width: 80%;
+    }
+
+    /* Estadísticas en 1 columna */
+    .estadistica-item {
+        min-width: 80%;
+    }
+
+    /* Tarjetas de cómo funciona en 1 columna */
+    .funcion-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Mensaje más compacto */
+    .mensaje {
+        margin: 1rem;
+        padding: 2rem 1rem;
+    }
+
+    .mensaje-imagen {
+        max-width: 80%;
+    }
+
+    /* Sobre nosotros */
+    .sobre-nosotros {
+        margin: 1rem;
+        padding: 2rem 1rem;
+    }
+}

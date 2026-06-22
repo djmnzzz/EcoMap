@@ -120,3 +120,63 @@ footer {
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+/* Responsive */
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburguesa span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--blanco);
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* Mostramos el botón hamburguesa */
+    .hamburguesa {
+        display: flex;
+    }
+
+    /* Ocultamos el menú por defecto en celular */
+    .main-nav {
+        display: none;
+        width: 100%;
+    }
+
+    /* Cuando el nav tiene la clase "abierto", se muestra */
+    .main-nav.abierto {
+        display: block;
+    }
+
+    /* El header en columna */
+    header {
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    /* Los links del menú en columna */
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.5rem 0;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 0.6rem 0.5rem;
+    }
+
+    /* Footer apilado */
+    footer {
+        flex-direction: column;
+    }

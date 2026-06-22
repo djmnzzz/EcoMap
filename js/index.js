@@ -58,3 +58,9 @@ function mostrarCentros(lista) {
 }
 
 cargarCentros();
+
+// Menú hamburguesa
+document.getElementById("btnHamburguesa").addEventListener("click", function () {
+    const nav = document.querySelector(".main-nav");
+    nav.classList.toggle("abierto");
+});
