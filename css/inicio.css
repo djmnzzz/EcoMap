@@ -156,6 +156,15 @@
 }
 
 /* =========================
+   CONTENEDOR EXTRA
+========================= */
+.carta-extra {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* =========================
    DESCRIPCIÓN
 ========================= */
 .descripcion {
@@ -203,28 +212,45 @@
 /* =========================
    BOTÓN MAPA
 ========================= */
+/* BOTÓN MAPA */
 .boton-mapa {
-    margin: 1rem;
-    padding: .8rem;
-
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: .5rem;
+    justify-content: center;
+    gap: .6rem;
 
-    background: linear-gradient(135deg, #10b981, #059669);
+    width: calc(100% - 2rem);
+    margin: auto 1rem 1rem;
+
+    padding: .9rem;
+
+      background: #10b981;
     color: white;
 
-    border-radius: 12px;
     text-decoration: none;
+    font-size: .95rem;
     font-weight: 600;
+
+    border-radius: 14px;
+    border: none;
+
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 
     transition: all 0.3s ease;
 }
 
 .boton-mapa:hover {
-    transform: scale(1.04);
-    filter: brightness(1.1);
+    transform: translateY(-3px);
+      background: #10b981;
+    filter: brightness(1.05);
+}
+
+.boton-mapa:active {
+    transform: translateY(0);
+}
+
+.boton-mapa i {
+    font-size: 1rem;
 }
 
 

@@ -56,22 +56,22 @@ function mostrarCentros(lista) {
 
            <div class="info-centro">
 
-    <div class="info-item">
-        <i class="fa-solid fa-clock"></i>
-        <span>${centro.horario ?? "Horario no disponible"}</span>
-    </div>
+            <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>${centro.horario ?? "Horario no disponible"}</span>
+            </div>
 
-    <div class="info-item">
-        <i class="fa-solid fa-phone"></i>
-        <span>${centro.contacto ?? "Sin contacto"}</span>
-    </div>
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>${centro.contacto ?? "Sin contacto"}</span>
+            </div>
 
-    <div class="info-item">
-        <i class="fa-solid fa-coins"></i>
-        <span>${centro.pagan ? "Paga por reciclaje" : "No paga por reciclaje"}</span>
-    </div>
+            <div class="info-item">
+                <i class="fa-solid fa-coins"></i>
+                <span>${centro.Pagan ? "Paga por reciclaje" : "No paga por reciclaje"}</span>
+            </div>
 
-</div>
+        </div>
 
             <a href="https://www.google.com/maps?q=${centro.latitud},${centro.longitud}"
                target="_blank"

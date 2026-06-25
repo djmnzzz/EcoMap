@@ -106,7 +106,7 @@
       "longitud": null,
       "materiales_aceptados": [
         "Papel",
-        "Plástico",
+        "Plásticos",
         "Vidrio",
         "Metales",
         "Electrónicos"
@@ -125,7 +125,7 @@
       "longitud": null,
       "materiales_aceptados": [
         "Papel",
-        "Plástico",
+        "Plásticos",
         "Vidrio",
         "Metales",
         "Electrónicos"
@@ -144,7 +144,7 @@
       "longitud": null,
       "materiales_aceptados": [
         "Papel",
-        "Plástico",
+        "Plásticos",
         "Vidrio",
         "Metales",
         "Electrónicos"
@@ -161,7 +161,7 @@
       "ubicacion_completa": "Siquirres, Limón, Costa Rica",
       "latitud": null,
       "longitud": null,
-      "materiales_aceptados": ["Plástico"],
+      "materiales_aceptados": ["Plásticos"],
       "horario": null,
       "numero_telefono": "+506 2768-0700",
       "imagen": "assets/images/plastico.png",
@@ -176,7 +176,7 @@
       "longitud": null,
       "materiales_aceptados": [
         "Papel",
-        "Plástico",
+        "Plásticos",
         "Electrónicos",
         "Metales"
       ],
@@ -218,7 +218,7 @@
       "ubicacion_completa": "San José Centro, Costa Rica",
       "latitud": null,
       "longitud": null,
-      "materiales_aceptados": ["Papel", "Plástico", "Electrónicos"],
+      "materiales_aceptados": ["Papel", "Plásticos", "Electrónicos"],
       "horario": "Campañas periódicas",
       "numero_telefono": "2211-0000",
       "imagen": "assets/images/PapelCarton.jpg",
