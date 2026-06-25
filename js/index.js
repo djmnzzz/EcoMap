@@ -16,7 +16,7 @@ async function cargarCentros() {
     ListaCentros = centros.centros_reciclaje;
 
     // Filtra solo los centros que pagan por reciclaje para mostrar en el inicio
-    listaActual = ListaCentros.filter(centro => centro.Pagan === true);
+    listaActual = ListaCentros.filter(centro => centro.pagan === true);
 
     mostrarCentros(listaActual);
 }
