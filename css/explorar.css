@@ -98,114 +98,106 @@
     box-shadow: 0 8px 20px rgba(46, 125, 50, 0.25);
 }
 /* CONTENEDOR */
-
 #centros {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    background: #e8f5e9;
 }
 
 /* CARTA */
-
 .carta {
     background: #ffffff;
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
 
     display: flex;
     flex-direction: column;
 
-    height: 650px;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,.1);
-    transition: .3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .carta:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.12);
 }
 
+/* LINK PRINCIPAL */
 .carta-link {
     display: flex;
     flex-direction: column;
-    flex: 1;
     text-decoration: none;
     color: inherit;
 }
 
 /* IMAGEN */
-
-.carta img {
-    width: 50%;
+.carta-img {
+    width: 100%;
     height: 220px;
-    margin: 0 auto;
-    object-fit: cover;  
+    overflow: hidden;
+}
+
+.carta-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-/* INFO */
-
+/* INFO PRINCIPAL */
 .carta-info {
-    padding: 1.2rem;
+    padding: 1rem 1.2rem;
 }
 
 .carta-info h3 {
-    font-size: 1.3rem;
-    color: #1f2937;
-    margin-bottom: .5rem;
+    font-size: 1.2rem;
+    color: #111827;
+    margin-bottom: .4rem;
 }
 
 .carta-ubicacion {
     color: #6b7280;
     font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
 }
 
 /* EXTRA */
-
 .carta-extra {
     padding: 0 1.2rem 1.2rem;
-
     display: flex;
     flex-direction: column;
-
     flex: 1;
 }
 
-.carta-extra p {
+.descripcion {
     color: #4b5563;
-    line-height: 1.5;
+    font-size: .9rem;
+    line-height: 1.4;
+    margin-top: .5rem;
 }
 
 /* MATERIALES */
-
 .materiales {
     display: flex;
     flex-wrap: wrap;
-    gap: .5rem;
+    gap: .4rem;
     margin: 1rem 0;
 }
 
 .materiales span {
-    background: #d1fae5;
-    color: #065f46;
-    padding: .4rem .8rem;
-    border-radius: 30px;
-    font-size: .8rem;
+    background: #dcfce7;
+    color: #166534;
+    padding: .35rem .7rem;
+    border-radius: 999px;
+    font-size: .75rem;
     font-weight: 600;
 }
 
-/* EXTRA INFO */
-
-.carta-extra-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
 /* INFO CENTRO */
-
 .info-centro {
     display: flex;
     flex-direction: column;
@@ -213,7 +205,7 @@
     margin-bottom: 1rem;
 }
 
-.info-centro p {
+.info-item {
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -221,37 +213,35 @@
     color: #374151;
 }
 
-.info-centro i {
+.info-item i {
     color: #10b981;
+    min-width: 18px;
 }
 
-/* BOTÓN MAPA*/
-
-.botton-mapa {
+/* BOTÓN MAPA */
+.boton-mapa {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .6rem;
+    gap: .5rem;
 
     width: 100%;
+    padding: .85rem;
 
-    padding: .9rem;
     border-radius: 12px;
-
     background: #10b981;
     color: white;
 
     text-decoration: none;
     font-weight: 600;
 
-    transition: .3s;
-
-        margin-top: auto;
-
+    margin-top: auto;
+    transition: background .2s ease, transform .2s ease;
 }
 
-.botton-mapa:hover {
+.boton-mapa:hover {
     background: #059669;
+    transform: scale(1.02);
 }
 
 /* RESPONSIVE */
