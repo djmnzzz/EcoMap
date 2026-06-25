@@ -11,7 +11,7 @@
       "horario": "Lunes a viernes de 07:00 a 12:00 y de 13:00 a 16:00",
       "numero_telefono": null,
       "imagen": "assets/images/Residuos Peligrosos.png",
-      "Pagan": false
+      "pagan": false
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
       "horario": "Lunes a viernes de 08:00 a 13:00",
       "numero_telefono": null,
       "imagen": "assets/images/Residuos Peligrosos.png",
-      "Pagan": false
+      "pagan": false
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
       "horario": "Lunes a viernes de 08:00 a 13:00",
       "numero_telefono": null,
       "imagen": "assets/images/Residuos Peligrosos.png",
-      "Pagan": false
+      "pagan": false
     },
     {
       "id": 4,
@@ -50,7 +50,7 @@
       "horario": "Lunes a viernes de 11:00 a 16:00",
       "numero_telefono": null,
       "imagen": "assets/images/Residuos Peligrosos.png",
-      "Pagan": false
+      "pagan": false
     },
     {
       "id": 5,
@@ -63,7 +63,7 @@
       "horario": "Lunes a viernes de 06:00 a 11:00 y de 12:00 a 15:00",
       "numero_telefono": null,
       "imagen": "assets/images/Residuos Peligrosos.png",
-      "Pagan": false
+      "pagan": false
     },
     {
       "id": 6,
@@ -76,7 +76,7 @@
       "horario": "Por definir",
       "numero_telefono": null,
       "imagen": "assets/images/Residuos Peligrosos.png",
-      "Pagan": false
+      "pagan": false
     },
     {
       "id": 7,
@@ -87,7 +87,7 @@
       "longitud": null,
       "materiales_aceptados": [
         "Papel",
-        "Plástico",
+        "Plásticos",
         "Vidrio",
         "Metales",
         "Electrónicos"
@@ -95,7 +95,7 @@
       "horario": "Lunes a viernes 07:30-17:00, Sábado 07:30-15:00",
       "numero_telefono": "+506 8883-3367",
       "imagen": "assets/images/PapelCarton.jpg",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 8,
@@ -114,7 +114,7 @@
       "horario": "Lunes a viernes 07:30-16:30, Sábado 07:00-13:00",
       "numero_telefono": "+506 2560-2171",
       "imagen": "assets/images/Metales.png",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 9,
@@ -133,7 +133,7 @@
       "horario": "Lunes a viernes 07:30-17:00",
       "numero_telefono": "+506 2551-6142",
       "imagen": "assets/images/Vidrio.png",
-      "Pagan": false
+      "pagan": false
     },
     {
       "id": 10,
@@ -152,7 +152,7 @@
       "horario": "Lunes a viernes 07:00-17:00, Sábado 07:00-12:00",
       "numero_telefono": "+506 8983-1959",
       "imagen": "assets/images/plastico.png",
-      "Pagan": false
+      "pagan": false
     },
     {
       "id": 11,
@@ -165,7 +165,7 @@
       "horario": null,
       "numero_telefono": "+506 2768-0700",
       "imagen": "assets/images/plastico.png",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 12,
@@ -183,7 +183,7 @@
       "horario": null,
       "numero_telefono": "+506 2550-4400",
       "imagen": "assets/images/PapelCarton.jpg",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 13,
@@ -196,7 +196,7 @@
       "horario": null,
       "numero_telefono": null,
       "imagen": "assets/images/Electronicos.png",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 14,
@@ -209,7 +209,7 @@
       "horario": null,
       "numero_telefono": null,
       "imagen": "assets/images/Electronicos.png",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 15,
@@ -222,7 +222,7 @@
       "horario": "Campañas periódicas",
       "numero_telefono": "2211-0000",
       "imagen": "assets/images/PapelCarton.jpg",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 16,
@@ -235,7 +235,7 @@
       "horario": "Campañas municipales",
       "numero_telefono": null,
       "imagen": "assets/images/Electronicos.png",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 17,
@@ -248,7 +248,7 @@
       "horario": null,
       "numero_telefono": null,
       "imagen": "assets/images/Electronicos.png",
-      "Pagan": true
+      "pagan": true
     },
     {
       "id": 18,
@@ -261,7 +261,7 @@
       "horario": null,
       "numero_telefono": "+506 2768-0700",
       "imagen": "assets/images/Electronicos.png",
-      "Pagan": true
+      "pagan": true
     }
   ]
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <a href="explorar.html">
+        <a href="index.html">
             <img src="assets/images/EcoMapLogo2.png" alt="Logo de EcoMap." width="150" height="100">
         </a>
 
@@ -51,8 +51,12 @@
         </section>
 
         <section class="filtros">
-            <h3>Filtrar por material:</h3>
-            <button onclick="filtrar('Todos'); activarBoton(this)">Todos</button>
+            <h3>Filtrar por ubicación:</h3>
+            <input type="text" id="busqueda" placeholder="Buscar por nombre o ubicación..."
+                oninput="actualizarCentros()"> <!--Escribir en el filtro-->
+            <button onclick="filtrar('Todos'); activarBoton(this)" class="activo">Todos</button>
+
+            <h3>Filtrar por material</h3>
             <button onclick="filtrar('Papel'); activarBoton(this)">Papel y cartón</button>
             <button onclick="filtrar('Plásticos'); activarBoton(this)">Plástico</button>
             <button onclick="filtrar('Vidrio'); activarBoton(this)">Vidrio</button>

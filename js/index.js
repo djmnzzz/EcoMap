@@ -1,27 +1,44 @@
+// Listas globales
 let ListaCentros = [];
 let listaActual = [];
 
+// Carga el archivo JSON con todos los centros de reciclaje
+// async/await se usa para esperar que el archivo cargue antes de continuar
 async function cargarCentros() {
 
+    // fetch busca y carga el archivo
     const respuesta = await fetch("data/centros.json");
+
+    // .json() convierte la respuesta en un objeto JavaScript
     const centros = await respuesta.json();
 
+    // Guarda el arreglo de centros en la variable global
     ListaCentros = centros.centros_reciclaje;
 
-    listaActual = ListaCentros.filter(
-        centro => centro.Pagan === true
-    );
+    // Filtra solo los centros que pagan por reciclaje para mostrar en el inicio
+    listaActual = ListaCentros.filter(centro => centro.Pagan === true);
 
     mostrarCentros(listaActual);
 }
 
+// Recibe un arreglo de centros y los muestra como tarjetas en el HTML
 function mostrarCentros(lista) {
 
+    // Busca el contenedor donde se van a insertar las tarjetas
     const contenedor = document.getElementById("centros");
+
+    // Limpia el contenedor para evitar que se repitan las tarjetas
     contenedor.innerHTML = "";
 
-    //recorre los elementos del arroglo
-    lista.forEach(centro => {
+    // Recorre cada centro del arreglo y crea su tarjeta en el HTML
+    for (const centro of lista) {
+
+        // Genera los spans de materiales como texto HTML
+        let materialesHTML = "";
+        const materiales = centro.materiales_aceptados ?? [];
+        for (const material of materiales) {
+            materialesHTML += `<span>${material}</span>`;
+        }
 
         contenedor.innerHTML += `
     <div class="carta">
@@ -49,34 +66,32 @@ function mostrarCentros(lista) {
             </p>
 
             <div class="materiales">
-                ${(centro.materiales_aceptados ?? [])
-                .map(m => `<span>${m}</span>`)
-                .join("")}
+                ${materialesHTML}
             </div>
 
-           <div class="info-centro">
+            <div class="info-centro">
 
-            <div class="info-item">
+                <div class="info-item">
                     <i class="fa-solid fa-clock"></i>
                     <span>${centro.horario ?? "Horario no disponible"}</span>
-            </div>
+                </div>
 
-            <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>${centro.contacto ?? "Sin contacto"}</span>
-            </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>${centro.contacto ?? "Sin contacto"}</span>
+                </div>
 
-            <div class="info-item">
-                <i class="fa-solid fa-coins"></i>
-                <span>${centro.Pagan ? "Paga por reciclaje" : "No paga por reciclaje"}</span>
-            </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-coins"></i>
+                    <span>${centro.pagan ? "Paga por reciclaje" : "No paga por reciclaje"}</span>
+                </div>
 
-        </div>
+            </div>
 
             <a href="https://www.google.com/maps?q=${centro.latitud},${centro.longitud}"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="boton-mapa">
+                target="_blank"
+                rel="noopener noreferrer"
+                class="boton-mapa">
 
                 <i class="fa-solid fa-map-location-dot"></i>
                 Ver ubicación
@@ -85,12 +100,13 @@ function mostrarCentros(lista) {
         </div>
     </div>
     `;
-    });
+    }
 }
 
+// Llama a la función principal para iniciar la carga
 cargarCentros();
 
-// Menú hamburguesa
+// Menú hamburguesa: abre o cierra el nav en pantallas pequeñas
 document.getElementById("btnHamburguesa").addEventListener("click", function () {
     const nav = document.querySelector(".main-nav");
     nav.classList.toggle("abierto");
