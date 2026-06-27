@@ -76,7 +76,7 @@ function mostrarCentros(lista) {
         contenedor.innerHTML += `
     <div class="carta">
 
-        <a href="detalle.html?id=${centro.id}" class="carta-link">
+        <div class="carta-link">
 
             <div class="carta-img">
                 <img src="${centro.imagen}" alt="${centro.nombre}">
@@ -90,7 +90,7 @@ function mostrarCentros(lista) {
                 </p>
             </div>
 
-        </a>
+        </div>
 
         <div class="carta-extra">
 
