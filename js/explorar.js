@@ -119,6 +119,10 @@ function mostrarCentros(lista) {
                     <span>${centro.pagan ? "Paga por reciclaje" : "No paga por reciclaje"}</span>
                 </div>
 
+                <div class="info-item">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>${centro.estado ?? "Inactivo"}</span>
+                </div>
             </div>
 
             <button class="btn-favorito ${esFavorito ? 'guardado' : ''}"
