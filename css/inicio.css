@@ -86,6 +86,26 @@ CONTENEDOR GENERAL
     animation-play-state: paused;
 }
 
+.centros-destacados {
+    overflow: hidden;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.centros-destacados {
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+#centros {
+    min-width: max-content;
+}
+
+.centros-destacados {
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
 /* =========================
 CARD PRINCIPAL
 ========================= */
@@ -111,6 +131,7 @@ CARD PRINCIPAL
 LINK PRINCIPAL
 ========================= */
 .carta-link {
+    display: block;
     text-decoration: none;
     color: inherit;
 }
@@ -495,6 +516,7 @@ BOTÓN MAPA
         padding: 3rem 1.5rem;
         gap: 2rem;
         text-align: center;
+        align-items: center;
     }
 
     .hero-text {
@@ -502,9 +524,24 @@ BOTÓN MAPA
         align-items: center;
     }
 
+    .hero-botones {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-botones a {
+        width: 100%;
+        max-width: 280px;
+    }
+
     .hero-image {
-        max-width: 60%;
+        max-width: 80%;
         margin: 0 auto;
+    }
+
+    .hero-image figure {
+        margin: 0;
     }
 
     /* Estadísticas en 2 columnas */
@@ -520,6 +557,7 @@ BOTÓN MAPA
     /* Tarjetas de cómo funciona en 2 columnas */
     .funciones-grid {
         gap: 1rem;
+        justify-content: center;
     }
 
     /* Mensaje apilado */
@@ -527,6 +565,7 @@ BOTÓN MAPA
         flex-direction: column;
         margin: 2rem 1rem;
         text-align: center;
+        gap: 1.5rem;
     }
 
     .mensaje-texto {
@@ -535,8 +574,14 @@ BOTÓN MAPA
     }
 
     .mensaje-imagen {
-        max-width: 60%;
+        max-width: 80%;
         margin: 0 auto;
+    }
+
+    #centros {
+        gap: 1rem;
+        width: max-content;
+        animation: scroll 25s linear infinite;
     }
 }
 
