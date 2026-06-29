@@ -14,7 +14,7 @@
                   "contacto": "ecalderon@flnc-cr.org",
                   "imagen": "assets/images/CentroBagaces.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 2,
@@ -30,15 +30,15 @@
                   "contacto": "+506 2690-5751",
                   "imagen": "assets/images/CentroNandayure.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 3,
                   "nombre": "Centro de Acopio de Pérez Zeledón",
                   "descripcion": "Centro de acopio para envases de agroquímicos y materiales agrícolas.",
                   "ubicacion_completa": "Dentro de las instalaciones del MAG en San Isidro de Pérez Zeledón, San José, Costa Rica",
-                  "latitud": 9.3641718052047,
-                  "longitud": -83.708679471409,
+                  "latitud": 9.329816542632681,
+                  "longitud": -83.67052349651192,
                   "materiales_aceptados": [
                         "Residuos peligrosos"
                   ],
@@ -46,7 +46,7 @@
                   "contacto": "+506 2770-6593",
                   "imagen": "assets/images/CentroPerez.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 4,
@@ -62,15 +62,15 @@
                   "contacto": "ecalderon@flnc-cr.org",
                   "imagen": "assets/images/CentroMuelle.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 5,
                   "nombre": "Centro de Acopio de Guápiles",
                   "descripcion": "Centro de acopio para envases de agroquímicos y materiales agrícolas.",
                   "ubicacion_completa": "Dentro de la Estación Experimental Los Diamantes del INTA, Guápiles, Limón, Costa Rica",
-                  "latitud": 10.256944866058,
-                  "longitud": -83.774315347752,
+                  "latitud": 10.286920811887656,
+                  "longitud": -83.77776745203468,
                   "materiales_aceptados": [
                         "Residuos peligrosos"
                   ],
@@ -78,7 +78,7 @@
                   "contacto": null,
                   "imagen": "assets/images/CentroGuapiles.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 6,
@@ -114,7 +114,7 @@
                   "contacto": "+506 8883-3367",
                   "imagen": "assets/images/CentroDesam.png",
                   "pagan": true,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 8,
@@ -134,7 +134,7 @@
                   "contacto": "+506 8396-0831",
                   "imagen": "assets/images/CentroSyl.png",
                   "pagan": true,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 9,
@@ -154,7 +154,7 @@
                   "contacto": "+506 2551-6142",
                   "imagen": "assets/images/CentroCartago.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": null
             },
             {
                   "id": 10,
@@ -174,7 +174,7 @@
                   "contacto": "+506 2560-6231",
                   "imagen": "assets/images/CentroHeredia.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 11,
@@ -190,7 +190,7 @@
                   "contacto": "+506 2768-0700",
                   "imagen": "assets/images/CentroRecyplast.png",
                   "pagan": true,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 12,
@@ -209,7 +209,7 @@
                   "contacto": "+506 2550-4400",
                   "imagen": "assets/images/CentroMuniCartago.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 13,
@@ -225,7 +225,7 @@
                   "contacto": "+506 2262 3544",
                   "imagen": "assets/images/CentroGollo.png",
                   "pagan": true,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 14,
@@ -241,7 +241,7 @@
                   "contacto": "800-372-8253",
                   "imagen": "assets/images/CentroEpa.png",
                   "pagan": true,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 15,
@@ -259,7 +259,7 @@
                   "contacto": "+506 2547-6000",
                   "imagen": "assets/images/CentroMuniSJ.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 16,
@@ -275,7 +275,7 @@
                   "contacto": "+506 2277-6765",
                   "imagen": "assets/images/CentroMuniHeredia.png",
                   "pagan": false,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 17,
@@ -291,7 +291,7 @@
                   "contacto": "+506 800-800-0722",
                   "imagen": "assets/images/CentroWalmart.png",
                   "pagan": true,
-                  "estado": "activo"
+                  "estado": "Activo"
             },
             {
                   "id": 18,
@@ -307,7 +307,7 @@
                   "contacto": "+506 2573-8634",
                   "imagen": "assets/images/CentroFortech.png",
                   "pagan": true,
-                  "estado": "activo"
+                  "estado": "Activo"
             }
       ]
 }

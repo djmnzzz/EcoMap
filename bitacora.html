@@ -7,7 +7,7 @@
     <meta name="description" content="Muestra un formulario para que el usuario registre sus hábitos de reciclaje.">
     <meta name="keywords" content="reciclaje, Costa Rica, EcoMap, centros de acopio, materiales, datos, hábitos">
     <meta name="author" content="Jesús González, Daniela Aguilar">
-    <title>EcoMap</title>
+    <title>EcoMap | Bitácora </title>
     <link rel="icon" type="image/jpeg" href="assets/images/EcoMapPersonaje.jpeg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bitacora.css">
@@ -29,15 +29,15 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="explorar.html">Explorar centros</a></li>
-                <li><a href="index.html #como-funciona">¿Cómo funciona?</a></li>
-                <li><a href="index.html #sobre-nosotros">Sobre nosotros</a></li>
+                <li><a href="index.html#como-funciona">¿Cómo funciona?</a></li>
+                <li><a href="index.html#sobre-nosotros">Sobre nosotros</a></li>
                 <li class="active"><a href="bitacora.html">Bitácora</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
+        <section id="hero-bitacora" class="hero-bitacora">
             <figure>
                 <img src="assets/images/EcoMapBitacora.png" alt="Contenedor de reciclaje con una tabla de tareas."
                     width="200">
@@ -61,7 +61,7 @@
                 <label for="cantidadMaterial">Cantidad de materiales (por kilo) *</label>
                 <input type="number" id="cantidadMaterial" placeholder="Ejemplo: 5" min="0.1" step="0.1" required>
                 <span class="campo-error" id="errorCantidad"></span>
-                
+
                 <label for="selectCentro">Centro de acopio *</label>
                 <select id="selectCentro" required>
                     <option value="">Seleccione un centro de acopio</option>
@@ -115,6 +115,13 @@
         </section>
 
         <div class="bitacora-lista">
+            <div class="bitacora-filtros">
+                <label for="filtroBitacora">Filtrar por material:</label>
+                <select id="filtroBitacora" onchange="filtrarBitacora()">
+                    <option value="Todos">Todos</option>
+                </select>
+            </div>
+
             <div class="bitacora-header">
                 <h2>Tu bitácora</h2>
                 <button id="btnVaciar" class="btn-vaciar">
@@ -137,7 +144,30 @@
                 </tbody>
             </table>
         </div>
+        <!-- Modal de confirmación al registrar una acción -->
+        <div id="modalRegistrar" class="modal-fondo" style="display:none;">
+            <div class="modal">
+                <h3>¿Confirmar registro?</h3>
+                <p id="modalRegistrarTexto"></p>
+                <div class="modal-botones">
+                    <button class="modal-btn-cancelar" onclick="cerrarModal('modalRegistrar')">Cancelar</button>
+                    <button class="modal-btn-confirmar" id="modalRegistrarConfirmar">Confirmar</button>
+                </div>
+            </div>
+        </div>
 
+        <!-- Modal de confirmación al eliminar un registro -->
+        <div id="modalEliminar" class="modal-fondo" style="display:none;">
+            <div class="modal">
+                <h3>¿Eliminar este registro?</h3>
+                <p>Esta acción no se puede deshacer.</p>
+                <div class="modal-botones">
+                    <button class="modal-btn-cancelar" onclick="cerrarModal('modalEliminar')">Cancelar</button>
+                    <button class="modal-btn-confirmar" id="modalEliminarConfirmar">Eliminar</button>
+                </div>
+            </div>
+        </div>
+        
         <p>¡Gracias por ser parte del cambio!</p>
     </main>
     <footer>
@@ -151,8 +181,8 @@
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="explorar.html">Explorar centros</a></li>
-                    <li><a href="index.html #como-funciona">¿Cómo funciona?</a></li>
-                    <li><a href="index.html #sobre-nosotros">Sobre nosotros</a></li>
+                    <li><a href="index.html#como-funciona">¿Cómo funciona?</a></li>
+                    <li><a href="index.html#sobre-nosotros">Sobre nosotros</a></li>
                     <li><a href="bitacora.html">Bitácora</a></li>
                 </ul>
             </nav>

@@ -21,7 +21,7 @@
             <img src="assets/images/EcoMapLogo2.png" alt="Logo de EcoMap." width="150" height="100">
         </a>
 
-        
+
         <button class="hamburguesa" id="btnHamburguesa">
             <span></span>
             <span></span>
@@ -41,36 +41,54 @@
 
     <main>
         <section class="hero">
-            <h3>CENTROS DE RECICLAJE</h3>
+            <section class="hero">
+                <p class="hero-subtitulo">CENTROS DE RECICLAJE</p>
+                <h1>Encuentra centros <br>de reciclaje cerca de ti</h1>
 
-            <h1>Encuentra centros <br>de reciclaje cerca de ti</h1>
+                <p>Explora los centros de reciclaje disponibles, puedes ver los materiales <br>
+                    que reciben y como constribuir a un planeta mas limpio
+                </p>
+            </section>
 
-            <p>Explora los centros de reciclaje disponibles, puedes ver los materiales <br>
-                que reciben y como constribuir a un planeta mas limpio
-            </p>
-        </section>
+            <section class="filtros">
+                <div class="filtro-busqueda">
+                    <p class="filtro-label">Filtrar por nombre o ubicación:</p>
+                    <input type="text" id="busqueda" placeholder="Buscar por nombre o ubicación..."
+                        oninput="actualizarCentros()">
+                </div>
 
-        <section class="filtros">
-            <h3>Filtrar por ubicación:</h3>
-            <input type="text" id="busqueda" placeholder="Buscar por nombre o ubicación..."
-                oninput="actualizarCentros()"> <!--Escribir en el filtro-->
-            <button onclick="filtrar('Todos'); activarBoton(this)" class="activo">Todos</button>
+                <p class="filtro-label">Filtrar por material</p>
+                <div class="filtros-botones">
+                    <button onclick="filtrar('Todos'); activarBoton(this)" class="activo">Todos</button>
+                    <button onclick="filtrar('Papel'); activarBoton(this)">Papel y cartón</button>
+                    <button onclick="filtrar('Plásticos'); activarBoton(this)">Plástico</button>
+                    <button onclick="filtrar('Vidrio'); activarBoton(this)">Vidrio</button>
+                    <button onclick="filtrar('Metales'); activarBoton(this)">Metales</button>
+                    <button onclick="filtrar('Orgánico'); activarBoton(this)">Orgánico</button>
+                    <button onclick="filtrar('Electrónicos'); activarBoton(this)">Electrónico</button>
+                    <button onclick="filtrar('Textil'); activarBoton(this)">Textil</button>
+                    <button onclick="filtrar('Residuos peligrosos'); activarBoton(this)">Residuos peligrosos</button>
+                </div>
 
-            <h3>Filtrar por material</h3>
-            <button onclick="filtrar('Papel'); activarBoton(this)">Papel y cartón</button>
-            <button onclick="filtrar('Plásticos'); activarBoton(this)">Plástico</button>
-            <button onclick="filtrar('Vidrio'); activarBoton(this)">Vidrio</button>
-            <button onclick="filtrar('Metales'); activarBoton(this)">Metales</button>
-            <button onclick="filtrar('Orgánico'); activarBoton(this)">Orgánico</button>
-            <button onclick="filtrar('Electrónicos'); activarBoton(this)">Electrónico</button>
-            <button onclick="filtrar('Textil'); activarBoton(this)">Textil</button>
-            <button onclick="filtrar('Residuos peligrosos'); activarBoton(this)">Residuos peligrosos</button>
-        </section>
+                <p class="filtro-label">Otras opciones</p>
+                <div class="filtros-extras">
+                    <label class="filtro-toggle">
+                        <input type="checkbox" id="soloPagan" onchange="actualizarCentros()">
+                        Solo centros que pagan por reciclaje
+                    </label>
 
-        <section class="centros-section">
-            <div id="centros"></div>
-        </section>
+                    <label class="filtro-toggle">
+                        <input type="checkbox" id="soloActivos" onchange="actualizarCentros()">
+                        Solo centros activos
+                    </label>
+                </div>
+            </section>
 
+            <section class="centros-section">
+                <h2>Centros disponibles</h2>
+                <div id="conteo-centros" class="conteo-centros"></div>
+                <div id="centros"></div>
+            </section>
     </main>
 
     <footer>

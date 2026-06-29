@@ -19,13 +19,25 @@ async function cargarCentros() {
     // RECUPERACIÓN AUTOMÁTICA: restaura el filtro y búsqueda guardados en localStorage
     const filtroGuardado = localStorage.getItem("filtroActivo");
     const busquedaGuardada = localStorage.getItem("busquedaActiva");
+    const paganGuardado = localStorage.getItem("filtroPagan");
+    const activosGuardado = localStorage.getItem("filtroActivos");
+
+    if (paganGuardado === "true") {
+        const pagan = document.getElementById("soloPagan");
+        if (pagan) pagan.checked = true;
+    }
+    if (activosGuardado === "true") {
+        const activos = document.getElementById("soloActivos");
+        if (activos) activos.checked = true;
+    }
 
     if (filtroGuardado) {
         materialesActuales = filtroGuardado;
 
         // Marca visualmente el botón que corresponde al filtro guardado
         for (const boton of document.querySelectorAll(".filtros button")) {
-            if (boton.textContent.trim() === filtroGuardado) {
+            const onclickStr = boton.getAttribute("onclick") || "";
+            if (onclickStr.includes(`'${filtroGuardado}'`)) {
                 boton.classList.add("activo");
             } else {
                 boton.classList.remove("activo");
@@ -161,17 +173,23 @@ function filtrar(materiales_aceptados) {
 // Aplica el filtro de material y la búsqueda de texto al mismo tiempo
 // y muestra los centros que cumplan ambas condiciones
 function actualizarCentros() {
- 
+
     // Lee el texto escrito en el campo de búsqueda
     const busqueda = document.getElementById("busqueda");
     const termino = busqueda ? busqueda.value.toLowerCase() : "";
- 
+
     // Guarda el texto de búsqueda en localStorage
     if (busqueda) localStorage.setItem("busquedaActiva", busqueda.value);
- 
-    // Parte con todos los centros
+
+    const soloPagan = document.getElementById("soloPagan")?.checked || false;
+    const soloActivos = document.getElementById("soloActivos")?.checked || false;
+
+    // Guarda el estado de los checkboxes
+    localStorage.setItem("filtroPagan", soloPagan);
+    localStorage.setItem("filtroActivos", soloActivos);
+
     let resultado = [...ListaCentros];
- 
+
     // Filtra por material si hay uno seleccionado
     // .includes() revisa si el arreglo de materiales del centro contiene el elegido
     if (materialesActuales !== "Todos") {
@@ -179,7 +197,7 @@ function actualizarCentros() {
             (centro.materiales_aceptados ?? []).includes(materialesActuales)
         );
     }
- 
+
     // Filtra por texto de búsqueda si el usuario escribió algo
     if (termino) {
         resultado = resultado.filter(centro =>
@@ -187,8 +205,24 @@ function actualizarCentros() {
             (centro.ubicacion_completa ?? "").toLowerCase().includes(termino)
         );
     }
- 
+
+    if (soloPagan) {
+        resultado = resultado.filter(centro => centro.pagan === true);
+    }
+
+    if (soloActivos) {
+        resultado = resultado.filter(centro => centro.estado === "Activo");
+    }
+
+
     listaActual = resultado;
+
+    const conteo = document.getElementById("conteo-centros");
+    if (conteo) {
+        conteo.textContent = resultado.length === 0
+            ? ""
+            : `${resultado.length} centro${resultado.length !== 1 ? "s" : ""} encontrado${resultado.length !== 1 ? "s" : ""}`;
+    }
     mostrarCentros(listaActual);
 }
 
@@ -201,26 +235,34 @@ function activarBoton(btn) {
 }
 
 function toggleFavorito(id, btn) {
-    // obtiene los favoritos o crea si esta vacio
     let favoritos = JSON.parse(localStorage.getItem("favoritos") || "[]");
-    if (favoritos.includes(id)) {
-        // si existe lo elimina del arreglo
-        favoritos = favoritos.filter(f => f !== id);
 
-        // cambia el diseno a no guardado
+    if (favoritos.includes(id)) {
+        favoritos = favoritos.filter(f => f !== id);
         btn.innerHTML = '<i class="fa-regular fa-heart"></i> Guardar';
         btn.classList.remove("guardado");
+        mostrarToast("Centro eliminado de favoritos");
     } else {
-        // si no esta en favoritos, se agrega al arreglo de let favs
         favoritos.push(id);
-
-        // cambia el diseno del boton a guardado
         btn.innerHTML = '<i class="fa-solid fa-heart"></i> Guardado';
         btn.classList.add("guardado");
+        mostrarToast("¡Centro guardado en favoritos!");
     }
 
-    // lo guarda en localstorage
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
+}
+
+function mostrarToast(mensaje) {
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.textContent = mensaje;
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.classList.add("toast-visible"), 10);
+    setTimeout(() => {
+        toast.classList.remove("toast-visible");
+        setTimeout(() => toast.remove(), 300);
+    }, 2500);
 }
 
 // Menú hamburguesa

@@ -30,6 +30,11 @@ function mostrarCentros(lista) {
     // Limpia el contenedor para evitar que se repitan las tarjetas
     contenedor.innerHTML = "";
 
+    if (lista.length === 0) {
+        contenedor.innerHTML = `<p class="sin-resultados">No se encontraron centros disponibles.</p>`;
+        return;
+    }
+
     // Recorre cada centro del arreglo y crea su tarjeta en el HTML
     for (const centro of lista) {
 
@@ -110,4 +115,14 @@ cargarCentros();
 document.getElementById("btnHamburguesa").addEventListener("click", function () {
     const nav = document.querySelector(".main-nav");
     nav.classList.toggle("abierto");
+});
+
+// Muestra u oculta la descripción extendida de las tarjetas al hacer clic
+document.addEventListener("click", function (e) {
+    if (e.target.closest(".carta-link")) {
+        const carta = e.target.closest(".carta");
+        if (carta) {
+            carta.classList.toggle("carta-expandida");
+        }
+    }
 });

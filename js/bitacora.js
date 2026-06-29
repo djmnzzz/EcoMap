@@ -112,8 +112,11 @@ document.getElementById("selectCentro").addEventListener("change", function () {
 
 // Escucha cambios en la fecha para validar en tiempo real
 document.getElementById("fechaAccion").addEventListener("change", function () {
+    const hoy = new Date().toISOString().split("T")[0];
     if (this.value === "") {
         mostrarErrorCampo("fechaAccion", "errorFecha", "Selecciona una fecha.");
+    } else if (this.value > hoy) {
+        mostrarErrorCampo("fechaAccion", "errorFecha", "La fecha no puede ser futura.");
     } else {
         limpiarErrorCampo("fechaAccion", "errorFecha");
     }
@@ -154,8 +157,12 @@ document.querySelector(".bitacora-form").addEventListener("submit", function (ev
         limpiarErrorCampo("selectCentro", "errorCentro");
     }
 
+    const hoy = new Date().toISOString().split("T")[0];
     if (fecha === "") {
         mostrarErrorCampo("fechaAccion", "errorFecha", "Selecciona una fecha.");
+        hayErrores = true;
+    } else if (fecha > hoy) {
+        mostrarErrorCampo("fechaAccion", "errorFecha", "La fecha no puede ser futura.");
         hayErrores = true;
     } else {
         limpiarErrorCampo("fechaAccion", "errorFecha");
@@ -166,40 +173,49 @@ document.querySelector(".bitacora-form").addEventListener("submit", function (ev
         mostrarMensajeFormulario("Por favor completa todos los campos correctamente.", "error-global");
         return;
     }
+    // Muestra el resumen en el modal antes de confirmar
+    document.getElementById("modalRegistrarTexto").textContent =
+        `${cantidad} kg de ${material} en ${centro} el ${fecha}.`;
 
-    // Crea el nuevo registro con un id único basado en la fecha actual
-    const nuevoRegistro = {
-        id: Date.now(),
-        material: material,
-        cantidad: Number(cantidad),
-        centro: centro,
-        fecha: fecha
+    abrirModal("modalRegistrar");
+
+    // Al confirmar en el modal, guarda el registro
+    document.getElementById("modalRegistrarConfirmar").onclick = function () {
+        cerrarModal("modalRegistrar");
+
+        const nuevoRegistro = {
+            id: Date.now(),
+            material,
+            cantidad: Number(cantidad),
+            centro,
+            fecha
+        };
+
+        // Agrega el registro al arreglo global
+        bitacora.push(nuevoRegistro);
+
+        // Guarda el arreglo actualizado en localStorage
+        guardarBitacoraEnStorage();
+
+        // Actualiza la tabla, el resumen y el desglose en pantalla
+        actualizarInterfaz();
+
+        // Muestra un mensaje de confirmación visual
+        mostrarMensajeFormulario("¡Acción registrada exitosamente!", "exito");
+
+        // Quita las clases de validación visual de los campos
+        const campos = ["selectMaterial", "cantidadMaterial", "selectCentro", "fechaAccion"];
+        for (const id of campos) {
+            document.getElementById(id).classList.remove("valido", "invalido");
+        }
+
+        // Limpia el formulario
+        this.reset();
+
+        // Limpia el select de centros porque el reset vacía el material
+        document.getElementById("selectCentro").innerHTML =
+            "<option value=''>Seleccione un centro de acopio</option>";
     };
-
-    // Agrega el registro al arreglo global
-    bitacora.push(nuevoRegistro);
-
-    // Guarda el arreglo actualizado en localStorage
-    guardarBitacoraEnStorage();
-
-    // Actualiza la tabla, el resumen y el desglose en pantalla
-    actualizarInterfaz();
-
-    // Muestra un mensaje de confirmación visual
-    mostrarMensajeFormulario("¡Acción registrada exitosamente!", "exito");
-
-    // Quita las clases de validación visual de los campos
-    const campos = ["selectMaterial", "cantidadMaterial", "selectCentro", "fechaAccion"];
-    for (const id of campos) {
-        document.getElementById(id).classList.remove("valido", "invalido");
-    }
-
-    // Limpia el formulario
-    this.reset();
-
-    // Limpia el select de centros porque el reset vacía el material
-    document.getElementById("selectCentro").innerHTML =
-        "<option value=''>Seleccione un centro de acopio</option>";
 });
 
 // Guarda el arreglo de bitácora en localStorage como texto JSON
@@ -220,6 +236,16 @@ function mostrarTabla() {
 
     // Limpia la tabla antes de volver a dibujarla
     tbody.innerHTML = "";
+
+    // Actualiza las opciones del filtro con los materiales registrados
+    const selectFiltro = document.getElementById("filtroBitacora");
+    if (selectFiltro) {
+        const materialesEnBitacora = [...new Set(bitacora.map(r => r.material))];
+        selectFiltro.innerHTML = `<option value="Todos">Todos</option>`;
+        for (const mat of materialesEnBitacora) {
+            selectFiltro.innerHTML += `<option value="${mat}">${mat}</option>`;
+        }
+    }
 
     // Si no hay registros, muestra un mensaje informativo
     if (bitacora.length === 0) {
@@ -293,9 +319,15 @@ function mostrarResumen() {
 
 // Elimina el registro con el id dado usando .filter() y actualiza la interfaz
 function eliminarRegistro(id) {
-    bitacora = bitacora.filter(registro => registro.id !== id);
-    guardarBitacoraEnStorage();
-    actualizarInterfaz();
+    abrirModal("modalEliminar");
+
+    document.getElementById("modalEliminarConfirmar").onclick = function () {
+        cerrarModal("modalEliminar");
+        bitacora = bitacora.filter(registro => registro.id !== id);
+        guardarBitacoraEnStorage();
+        actualizarInterfaz();
+        mostrarMensajeFormulario("Registro eliminado.", "exito");
+    };
 }
 
 // Calcula el total por material y muestra una barra de progreso por cada uno
@@ -352,14 +384,21 @@ document.getElementById("btnVaciar").addEventListener("click", function () {
         return;
     }
 
-    const confirmar = confirm("¿Estás seguro de que quieres vaciar toda tu bitácora? Esta acción no se puede deshacer.");
+    document.getElementById("modalEliminar").querySelector("p").textContent =
+        "Se eliminarán todos los registros. Esta acción no se puede deshacer.";
 
-    if (confirmar) {
+    abrirModal("modalEliminar");
+
+    document.getElementById("modalEliminarConfirmar").onclick = function () {
+        cerrarModal("modalEliminar");
+        // Restaura el texto original del modal para eliminaciones individuales
+        document.getElementById("modalEliminar").querySelector("p").textContent =
+            "Esta acción no se puede deshacer.";
         bitacora = [];
         guardarBitacoraEnStorage();
         actualizarInterfaz();
         mostrarMensajeFormulario("La bitácora ha sido vaciada.", "exito");
-    }
+    };
 });
 
 // Muestra el texto de error debajo de un campo y lo marca visualmente
@@ -401,3 +440,43 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarDatosDelJSON();
     cargarBitacoraDeStorage();
 });
+
+// Filtra las filas de la tabla según el material seleccionado
+function filtrarBitacora() {
+    const filtro = document.getElementById("filtroBitacora").value;
+    const lista = filtro === "Todos"
+        ? bitacora
+        : bitacora.filter(r => r.material === filtro);
+
+    const tbody = document.getElementById("bitacoraBody");
+    tbody.innerHTML = "";
+
+    if (lista.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5">No hay registros para ese material.</td></tr>`;
+        return;
+    }
+
+    for (const registro of lista) {
+        tbody.innerHTML += `
+            <tr>
+                <td>${registro.fecha}</td>
+                <td>${registro.material}</td>
+                <td>${registro.cantidad} kg</td>
+                <td>${registro.centro}</td>
+                <td>
+                    <button class="btn-eliminar" onclick="eliminarRegistro(${registro.id})">Eliminar</button>
+                </td>
+            </tr>
+        `;
+    }
+}
+
+// Abre un modal por su id
+function abrirModal(id) {
+    document.getElementById(id).style.display = "flex";
+}
+
+// Cierra un modal por su id
+function cerrarModal(id) {
+    document.getElementById(id).style.display = "none";
+}

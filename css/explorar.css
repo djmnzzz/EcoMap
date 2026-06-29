@@ -1,17 +1,20 @@
+/* Marca visualmente la página activa en el menú de navegación */
 .main-nav ul li.active a {
     background-color: var(--verde-claro);
     color: var(--verde-oscuro);
-
 }
+/* =========================
+Hero 
+========================= */
 
-/*Hero*/
-
+/* Centra el contenido del hero y define el espaciado general */
 .hero {
     text-align: center;
     padding: 6rem 2rem;
 }
 
-.hero h3 {
+/* Etiqueta pequeña encima del título principal */
+.hero-subtitulo {
     color: #16a34a;
     font-size: 1rem;
     font-weight: 700;
@@ -19,6 +22,7 @@
     margin-bottom: 1rem;
 }
 
+/* Título principal del hero */
 .hero h1 {
     font-size: 4rem;
     font-weight: 800;
@@ -27,103 +31,150 @@
     margin-bottom: 1.5rem;
 }
 
+/* Descripción debajo del título */
 .hero p {
     max-width: 750px;
     margin: 0 auto;
-
     font-size: 1.15rem;
     line-height: 1.8;
-
     color: #6b7280;
 }
 
+
 /* =========================
-FILTROS
+Filtros — Barra de búsqueda y botones de material
 ========================= */
 
-.filtros h3 {
-    width: 100%;
-    text-align: center;
-
-    margin-bottom: 1.5rem;
-
-    color: var(--verde-oscuro);
-
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
+/* Contenedor principal de todos los filtros */
 .filtros {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
-
     margin: 3rem auto;
     padding: 0 1rem;
 }
 
+/* Agrupa el label de búsqueda y el input en una misma fila centrada */
+.filtro-busqueda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+/* Esto corrige el ancho del texto solo en la barra de búsqueda */
+.filtro-busqueda .filtro-label {
+    width: auto; 
+    margin: 0;
+}
+
+/* Etiquetas de texto dentro de los filtros (reemplaza los h3) */
+.filtro-label {
+    width: 100%;
+    text-align: center;
+    color: var(--verde-oscuro);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0.2rem;
+}
+
+/* Agrupa los botones de material en una fila envolvente */
+.filtros-botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Campo de búsqueda de texto */
 .filtros input[type="text"] {
     width: 100%;
     max-width: 480px;
-
     padding: 0.8rem 1.4rem;
     margin-bottom: 0.5rem;
-
     border: 2px solid var(--blanco);
     border-radius: 50px;
-
     font-size: 0.95rem;
     color: var(--texto-oscuro);
-
     outline: none;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
-
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Estado de foco del campo de búsqueda */
 .filtros input[type="text"]:focus {
     border-color: var(--verde-oscuro);
     box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
 }
 
+/* Botones de filtro por material */
 .filtros button {
     background: white;
     color: var(--verde-oscuro);
-
     border: 2px solid #e8f5e9;
     border-radius: 50px;
-
     padding: 0.8rem 1.4rem;
-
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-
     transition: all 0.25s ease;
-
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Hover de los botones de filtro */
 .filtros button:hover {
     background: #e8f5e9;
     border-color: var(--verde-oscuro);
-
     transform: translateY(-2px);
-
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Estado activo del botón seleccionado */
 .filtros button.activo {
     background: var(--verde-oscuro);
     color: white;
     border-color: var(--verde-oscuro);
-
     box-shadow: 0 8px 20px rgba(46, 125, 50, 0.25);
 }
 
-/* CONTENEDOR */
+/* Contenedor de los filtros extra (checkboxes) */
+.filtros-extras {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+/* Cada opción de checkbox con su etiqueta */
+.filtro-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+    cursor: pointer;
+}
+
+/* Checkbox dentro del filtro toggle */
+.filtro-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--verde-oscuro);
+    cursor: pointer;
+}
+
+/* =========================
+Contenedor de centros
+========================= */
+
+/* Grid principal donde se renderizan las tarjetas */
 #centros {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -132,7 +183,19 @@ FILTROS
     background: #e8f5e9;
 }
 
-/* no hay centros */
+/* Conteo de resultados encima del grid */
+.conteo-centros {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--texto-gris);
+    margin-bottom: 0.5rem;
+}
+
+/* =========================
+Estado vacío — Sin resultados
+========================= */
+
+/* Mensaje que aparece cuando no hay centros para mostrar */
 .estado-vacio {
     grid-column: 1 / -1;
     text-align: center;
@@ -140,6 +203,7 @@ FILTROS
     color: var(--texto-gris);
 }
 
+/* Ícono del estado vacío */
 .estado-vacio i {
     font-size: 3rem;
     color: var(--verde-claro);
@@ -147,30 +211,34 @@ FILTROS
     display: block;
 }
 
+/* Texto del estado vacío */
 .estado-vacio p {
     font-size: 1.1rem;
 }
 
-/* CARTA */
+/* =========================
+Carta 
+========================= */
+
+/* Contenedor principal de la tarjeta */
 .carta {
     background: #ffffff;
     border-radius: 18px;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
     min-height: 100%;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
-    transition: transform .25s ease, box-shadow .25s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Efecto hover de la tarjeta */
 .carta:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, .12);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* LINK PRINCIPAL */
+/* Parte superior clickeable de la tarjeta */
 .carta-link {
     display: flex;
     flex-direction: column;
@@ -178,13 +246,14 @@ FILTROS
     color: inherit;
 }
 
-/* IMAGEN */
+/* Contenedor de la imagen de la tarjeta */
 .carta-img {
     width: 100%;
     height: 220px;
     overflow: hidden;
 }
 
+/* Imagen dentro de la tarjeta */
 .carta-img img {
     width: 100%;
     height: 100%;
@@ -192,139 +261,190 @@ FILTROS
     display: block;
 }
 
-/* INFO PRINCIPAL */
+/* Nombre y ubicación del centro */
 .carta-info {
     padding: 1rem 1.2rem;
+    text-align: left;
 }
 
+/* Nombre del centro */
 .carta-info h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #111827;
-    margin-bottom: .4rem;
+    margin-bottom: 0.4rem;
 }
 
+/* Ubicación con ícono */
 .carta-ubicacion {
     color: #6b7280;
-    font-size: .9rem;
+    font-size: 1.1rem !important;
+    line-height: 1.3;
     display: flex;
     align-items: center;
-    gap: .4rem;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
 }
 
-/* EXTRA */
+.carta-ubicacion i {
+    color: #10b981;
+    font-size: 0.75rem;
+    margin-top: 0;
+    align-self: flex-start;
+    padding-top: 10px;
+}
+
+/* Sección expandible con información detallada */
 .carta-extra {
     padding: 0 1.2rem 1.2rem;
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 0;
+    text-align: left;
 }
 
+/* Descripción del centro */
 .descripcion {
     color: #4b5563;
-    font-size: .9rem;
-    line-height: 1.4;
-    margin-top: .5rem;
+    font-size:1rem !important;
+    line-height: 1.45;
+    margin-top: 0.5rem;
 }
 
-/* MATERIALES */
+/* =========================
+Materiales
+========================= */
+
+/* Contenedor de los materiales */
 .materiales {
     display: flex;
     flex-wrap: wrap;
-    gap: .4rem;
+    gap: 0.4rem;
     margin: 1rem 0;
 }
 
+/* El individual de material */
 .materiales span {
     background: #dcfce7;
     color: #166534;
-    padding: .35rem .7rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 999px;
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-weight: 600;
 }
 
-/* INFO CENTRO */
+/* =========================
+Info centro — Horario, contacto y estado
+========================= */
+
+/* Lista de datos del centro */
 .info-centro {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
     margin-bottom: 1rem;
 }
 
+/* Fila individual de dato con ícono */
 .info-item {
     display: flex;
     align-items: center;
-    gap: .5rem;
-    font-size: .9rem;
+    gap: 0.5rem;
+    font-size: 0.9rem;
     color: #374151;
 }
 
+/* Ícono de cada dato */
 .info-item i {
     color: #10b981;
     min-width: 18px;
 }
 
-/* BOTÓN MAPA */
-.boton-mapa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
+/* =========================
+Botones de la tarjeta 
+========================= */
 
-    width: 100%;
-    padding: .85rem;
-
-    border-radius: 12px;
-    background: #10b981;
-    color: white;
-
-    text-decoration: none;
-    font-weight: 600;
-
-    transition: background .2s ease, transform .2s ease;
-}
-
-.boton-mapa:hover {
-    background: #059669;
-    transform: scale(1.02);
-}
-
-
+/* Botón para guardar como favorito */
 .btn-favorito {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
-
+    gap: 0.5rem;
     width: 100%;
-    padding: .7rem;
+    padding: 0.7rem;
     margin-top: auto;
-    margin-bottom: .6rem;
-
+    margin-bottom: 0.6rem;
     border-radius: 12px;
     border: 2px solid #10b981;
     background: white;
     color: #10b981;
-
     font-weight: 600;
     cursor: pointer;
-
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 }
 
+/* Hover del botón favorito */
 .btn-favorito:hover {
     background: #f0fdf4;
 }
 
+/* Estado cuando el centro ya está guardado como favorito */
 .btn-favorito.guardado {
     background: #dcfce7;
     color: #166534;
     border-color: #166534;
 }
 
-/* RESPONSIVE */
-/*  Tablet (768px) */
+/* Botón para ver la ubicación en Google Maps */
+.boton-mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 12px;
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover del botón de mapa */
+.boton-mapa:hover {
+    background: #059669;
+    transform: scale(1.02);
+}
+
+/* =========================
+Notificación flotante
+========================= */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--verde-oscuro);
+    color: white;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+}
+
+.toast-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+Responsive — Tablet 
+========================= */
 @media (max-width: 768px) {
 
     /* Hero más compacto */
@@ -336,6 +456,7 @@ FILTROS
         font-size: 2.5rem;
     }
 
+    /* Filtros apilados */
     .filtros {
         justify-content: center;
         align-items: stretch;
@@ -365,7 +486,9 @@ FILTROS
     }
 }
 
-/* Celular (480px)  */
+/* =========================
+Responsive — Celular 
+========================= */
 @media (max-width: 480px) {
 
     /* Hero más pequeño */
@@ -388,7 +511,7 @@ FILTROS
         gap: 1rem;
     }
 
-    /* Imagen de la carta más grande en celular */
+    /* Imagen más compacta en celular */
     .carta-img {
         height: 180px;
     }
@@ -397,5 +520,11 @@ FILTROS
     .boton-mapa {
         padding: 0.7rem;
         font-size: 0.9rem;
+    }
+
+    /* Checkboxes apilados en celular */
+    .filtros-extras {
+        flex-direction: column;
+        align-items: center;
     }
 }
