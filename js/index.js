@@ -107,17 +107,35 @@ function mostrarCentros(lista) {
     `;
     }
 
-    // Expande la tarjeta solo al pasar el mouse por encima
+    // Expande la tarjeta al pasar el mouse o al tocarla en móvil
     const cartas = document.querySelectorAll(".carta");
     cartas.forEach((carta) => {
-        carta.addEventListener("mouseenter", () => {
+        const abrirCarta = () => {
             document.querySelectorAll(".carta-expandida").forEach((otraCarta) => {
                 otraCarta.classList.remove("carta-expandida");
             });
             carta.classList.add("carta-expandida");
-        });
+        };
 
-        carta.addEventListener("mouseleave", () => {
+        const cerrarCarta = () => {
+            carta.classList.remove("carta-expandida");
+        };
+
+        carta.addEventListener("mouseenter", abrirCarta);
+        carta.addEventListener("mouseleave", cerrarCarta);
+
+        carta.addEventListener("click", (evento) => {
+            evento.stopPropagation();
+            if (carta.classList.contains("carta-expandida")) {
+                cerrarCarta();
+            } else {
+                abrirCarta();
+            }
+        });
+    });
+
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".carta-expandida").forEach((carta) => {
             carta.classList.remove("carta-expandida");
         });
     });
