@@ -108,6 +108,7 @@ CENTROS DESTACADOS
     width: max-content;
     min-width: max-content;
     animation: scroll 25s linear infinite;
+    align-items: flex-start;
 }
 
 #centros:hover {
@@ -198,6 +199,10 @@ CARTAS
     display: flex;
 }
 
+.carta:not(.carta-expandida) .carta-extra {
+    display: none;
+}
+
 .descripcion {
     font-size: 0.9rem;
     color: #4b5563;
@@ -240,7 +245,7 @@ CARTAS
     justify-content: center;
     gap: 0.6rem;
     width: calc(100% - 2rem);
-    margin: auto 1rem 1rem;
+    margin: 0.75rem 1rem 1rem;
     padding: 0.9rem;
     background: #10b981;
     color: white;
