@@ -181,8 +181,8 @@
                   "nombre": "Recyplast",
                   "descripcion": "Planta industrial especializada en reciclaje de plástico.",
                   "ubicacion_completa": "Siquirres, Limón, Costa Rica",
-                  "latitud": null,
-                  "longitud": null,
+                  "latitud": 10.102388089978474,
+                  "longitud": -83.4496298048245,
                   "materiales_aceptados": [
                         "Plásticos"
                   ],
@@ -216,8 +216,8 @@
                   "nombre": "Punto de Recolección RAEE - Gollo Heredia Centro",
                   "descripcion": "Punto de recepción de residuos electrónicos y electrodomésticos en cadena comercial autorizada.",
                   "ubicacion_completa": "Heredia Centro, Heredia, Costa Rica",
-                  "latitud": null,
-                  "longitud": null,
+                  "latitud": 9.999819594232214, 
+                  "longitud": -84.11642152193932,
                   "materiales_aceptados": [
                         "Electrónicos"
                   ],
@@ -232,8 +232,8 @@
                   "nombre": "Punto de Recolección RAEE - EPA Curridabat",
                   "descripcion": "Centro comercial autorizado para recepción de residuos electrónicos y reciclaje especial.",
                   "ubicacion_completa": "Curridabat, San José, Costa Rica",
-                  "latitud": null,
-                  "longitud": null,
+                  "latitud": 9.924240916115004,
+                  "longitud": -84.03680101693574,
                   "materiales_aceptados": [
                         "Electrónicos"
                   ],
@@ -248,8 +248,8 @@
                   "nombre": "Municipalidad de San José - Centro de Acopio Ambiental",
                   "descripcion": "Centro municipal para recepción de residuos valorizables y campañas de reciclaje.",
                   "ubicacion_completa": "San José Centro, Costa Rica",
-                  "latitud": null,
-                  "longitud": null,
+                  "latitud": 9.931885663149039, 
+                  "longitud": -84.09479372475832,
                   "materiales_aceptados": [
                         "Papel",
                         "Plásticos",
@@ -266,8 +266,8 @@
                   "nombre": "Centro de Acopio RAEE - Municipalidad de Heredia",
                   "descripcion": "Punto de recolección de residuos electrónicos y valorizables gestionado por la municipalidad.",
                   "ubicacion_completa": "Heredia Centro, Heredia, Costa Rica",
-                  "latitud": null,
-                  "longitud": null,
+                  "latitud": 9.99921047099891,
+                  "longitud": -84.11603961064742,
                   "materiales_aceptados": [
                         "Electrónicos"
                   ],
@@ -298,8 +298,8 @@
                   "nombre": "Centro de Recolección RAEE - Fortex / Fortech",
                   "descripcion": "Gestor autorizado para recolección de residuos electrónicos y tecnológicos.",
                   "ubicacion_completa": "Alajuela, Costa Rica",
-                  "latitud": null,
-                  "longitud": null,
+                  "latitud": 10.001076525237824, 
+                  "longitud": -84.23561059179261,
                   "materiales_aceptados": [
                         "Electrónicos"
                   ],

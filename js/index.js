@@ -93,6 +93,7 @@ function mostrarCentros(lista) {
 
             </div>
 
+                    ${centro.latitud && centro.longitud ? `
             <a href="https://www.google.com/maps?q=${centro.latitud},${centro.longitud}"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -101,7 +102,12 @@ function mostrarCentros(lista) {
                 <i class="fa-solid fa-map-location-dot"></i>
                 Ver ubicación
             </a>
-
+        ` : `
+            <button class="boton-mapa boton-sin-ubicacion" onclick="alert('Ubicación exacta no disponible para este centro')">
+                <i class="fa-solid fa-map-location-dot"></i>
+                Ubicación no disponible
+            </button>
+        `}
         </div>
     </div>
     `;

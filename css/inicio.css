@@ -267,6 +267,24 @@ CARTAS
     font-size: 1rem;
 }
 
+/* Botón de mapa cuando el centro no tiene coordenadas registradas */
+.boton-sin-ubicacion {
+    background: #fee2e2 !important;
+    color: #991b1b !important;
+    cursor: not-allowed;
+    border:  none;
+}
+
+.boton-sin-ubicacion:hover {
+    background: #fecaca !important;
+    transform: none;
+}
+
+.boton-sin-ubicacion:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(252, 165, 165, 0.5);
+}
+
 /* =========================
 PROBLEMA 
 ========================= */

@@ -143,6 +143,7 @@ function mostrarCentros(lista) {
                 ${esFavorito ? 'Guardado' : 'Guardar'}
             </button>
 
+        ${centro.latitud && centro.longitud ? `
             <a href="https://www.google.com/maps?q=${centro.latitud},${centro.longitud}"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -151,6 +152,12 @@ function mostrarCentros(lista) {
                 <i class="fa-solid fa-map-location-dot"></i>
                 Ver ubicación
             </a>
+        ` : `
+            <button class="boton-mapa boton-sin-ubicacion" onclick="mostrarToast('Ubicación exacta no disponible para este centro')">
+                <i class="fa-solid fa-map-location-dot"></i>
+                Ubicación no disponible
+            </button>
+        `}
 
         </div>
     </div>
@@ -164,8 +171,23 @@ cargarCentros();
 // Guarda el material seleccionado y actualiza el catálogo
 function filtrar(materiales_aceptados) {
     materialesActuales = materiales_aceptados;
-    // guarda el filtro activo
     localStorage.setItem("filtroActivo", materiales_aceptados);
+
+    if (materiales_aceptados === "Todos") {
+        // Limpia el campo de búsqueda
+        const busqueda = document.getElementById("busqueda");
+        if (busqueda) busqueda.value = "";
+        localStorage.removeItem("busquedaActiva");
+
+        // Desmarca los checkboxes de filtros extra
+        const pagan = document.getElementById("soloPagan");
+        const activos = document.getElementById("soloActivos");
+        if (pagan) pagan.checked = false;
+        if (activos) activos.checked = false;
+        localStorage.setItem("filtroPagan", false);
+        localStorage.setItem("filtroActivos", false);
+    }
+
     actualizarCentros();
 
 }
