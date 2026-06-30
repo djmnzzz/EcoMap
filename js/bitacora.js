@@ -206,15 +206,29 @@ document.querySelector(".bitacora-form").addEventListener("submit", function (ev
         // Quita las clases de validación visual de los campos
         const campos = ["selectMaterial", "cantidadMaterial", "selectCentro", "fechaAccion"];
         for (const id of campos) {
-            document.getElementById(id).classList.remove("valido", "invalido");
+            const campo = document.getElementById(id);
+            campo.classList.remove("valido", "invalido");
+
+            if (id === "cantidadMaterial" || id === "fechaAccion") {
+                campo.value = "";
+            } else {
+                campo.value = "";
+            }
         }
 
-        // Limpia el formulario
-        this.reset();
+        // Limpia el formulario y deja los campos listos para una nueva acción
+        const formulario = document.querySelector(".bitacora-form");
+        formulario.reset();
 
-        // Limpia el select de centros porque el reset vacía el material
+        // Reinicia el select de centros para que no conserve opciones previas
         document.getElementById("selectCentro").innerHTML =
             "<option value=''>Seleccione un centro de acopio</option>";
+
+        // Limpia los mensajes de error visibles
+        document.getElementById("errorMaterial").textContent = "";
+        document.getElementById("errorCantidad").textContent = "";
+        document.getElementById("errorCentro").textContent = "";
+        document.getElementById("errorFecha").textContent = "";
     };
 });
 

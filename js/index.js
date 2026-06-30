@@ -106,6 +106,21 @@ function mostrarCentros(lista) {
     </div>
     `;
     }
+
+    // Expande la tarjeta solo al pasar el mouse por encima
+    const cartas = document.querySelectorAll(".carta");
+    cartas.forEach((carta) => {
+        carta.addEventListener("mouseenter", () => {
+            document.querySelectorAll(".carta-expandida").forEach((otraCarta) => {
+                otraCarta.classList.remove("carta-expandida");
+            });
+            carta.classList.add("carta-expandida");
+        });
+
+        carta.addEventListener("mouseleave", () => {
+            carta.classList.remove("carta-expandida");
+        });
+    });
 }
 
 // Llama a la función principal para iniciar la carga
@@ -115,14 +130,4 @@ cargarCentros();
 document.getElementById("btnHamburguesa").addEventListener("click", function () {
     const nav = document.querySelector(".main-nav");
     nav.classList.toggle("abierto");
-});
-
-// Muestra u oculta la descripción extendida de las tarjetas al hacer clic
-document.addEventListener("click", function (e) {
-    if (e.target.closest(".carta-link")) {
-        const carta = e.target.closest(".carta");
-        if (carta) {
-            carta.classList.toggle("carta-expandida");
-        }
-    }
 });
